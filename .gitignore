@@ -7,3 +7,10 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
+product-webservices.iml
+**.iml
+**/target/
+.idea
+.project
+.classpath
+
