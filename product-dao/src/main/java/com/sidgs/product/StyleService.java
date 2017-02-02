@@ -1,6 +1,7 @@
 package com.sidgs.product;
 
-import com.aem.model.StyleMaster;
+
+import com.sidgs.product.model.StyleMaster;
 
 import java.util.List;
 

@@ -1,6 +1,7 @@
 package com.sidgs.product;
 
-import com.aem.model.Product;
+
+import com.sidgs.product.model.Product;
 
 import java.util.List;
 

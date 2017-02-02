@@ -13,4 +13,6 @@
         <module>product-ws</module>
     </modules>
 
+    <packaging>pom</packaging>
+
 </project>
