@@ -17,7 +17,8 @@ import java.util.List;
 
 public class MemberServiceImpl implements MemberService {
 
-
+String name;
+String userid; 
     Log logger = LogFactory.getLog(this.getClass());
 
     DataSource dataSource = null ;
@@ -133,7 +134,51 @@ public class MemberServiceImpl implements MemberService {
     }
 
     public List<Member> findbyFirstName(String name) {
-        return null;
+    	this.name = name;
+    	 List<Member> members_name = new ArrayList<Member>();
+    	 ResultSet rs = null;
+    	 Statement  st = null;
+    	 Connection connection = null;
+    	try{
+    		 connection = dataSource.getConnection();
+    		  st = connection.createStatement();
+    	     String s = "SELECT * FROM MEMBER WHERE FIRST_NAME='+name'";
+    		 rs = st.executeQuery(s);
+    		while(rs.next()){
+    			 Member member = new Member();
+                 member.setId(rs.getLong("ID"));
+                 member.setFirstName(rs.getString("FIRST_NAME"));
+                 member.setEmail(rs.getString("EMAIL"));
+                 member.setLastName(rs.getString("LAST_NAME"));
+                 member.setTelephone(rs.getString("TELE_PHONE"));
+                 member.setGender(rs.getString("GENDER"));
+                 member.setUserid(rs.getString("USERID"));
+                 members_name.add(member);
+    		}
+    	}
+    	catch(Exception e){
+    		logger.warn(e.getMessage(),e);
+    	}
+    	finally{
+    		 try {
+                 rs.close();
+             } catch (SQLException e) {
+                 logger.debug(e.getMessage(), e);
+             }
+
+             try {
+                 st.close();
+             } catch (SQLException e) {
+                 logger.debug(e.getMessage(), e);
+             }
+
+             try {
+                 connection.close();
+             } catch (SQLException e) {
+                 logger.debug(e.getMessage(), e);
+             }
+    	}
+        return members_name;
     }
 
     public Member findByUserID(String userID) {
