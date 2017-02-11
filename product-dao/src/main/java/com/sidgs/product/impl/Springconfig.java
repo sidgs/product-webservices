@@ -17,29 +17,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 @Configuration
 public class Springconfig {
 
-    @Value("${jdbc.classname}")
-    String driverClassName = "";
-
-    @Value("${jdbc.driverUrl}")
-    String driverUrl = "" ;
-
-    @Value("${jdbc.username}")
-    String username = "";
-
-    @Value("${jdbc.password}")
-    String password = "" ;
-
-@Bean
-@Scope (value = "singleton")
-public DataSource getDataSorce(){
-
-    BasicDataSource basicDataSource = new BasicDataSource();
-    basicDataSource.setDriverClassName(driverClassName);
-    basicDataSource.setUrl(driverUrl);
-    basicDataSource.setUsername(username);
-    basicDataSource.setPassword(password);
-    return  basicDataSource;
-}
 
     @Autowired
     DataSource dataSource;
