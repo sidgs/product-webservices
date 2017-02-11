@@ -13,4 +13,5 @@ product-webservices.iml
 .idea
 .project
 .classpath
+**/.settings
 
