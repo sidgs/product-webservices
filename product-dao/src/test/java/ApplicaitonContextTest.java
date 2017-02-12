@@ -11,7 +11,7 @@ public class ApplicaitonContextTest {
 	@Test
 	public void test() {
 		ApplicationContext ap = new ClassPathXmlApplicationContext();
-		assert(ap.containsBean("/src/main/resources/applicationContext.xml"));
+		assert(ap.containsBean("/src/main/resources/productDao-ApplicationContext.xml"));
 	}
 	
 	
