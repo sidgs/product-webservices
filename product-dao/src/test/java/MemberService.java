@@ -1,7 +1,7 @@
 import com.sidgs.product.error.MemberException;
 import com.sidgs.product.impl.MemberServiceImpl;
 import com.sidgs.product.model.Member;
-import org.apache.commons.dbcp.BasicDataSourceFactory;
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -34,7 +34,13 @@ public class MemberService {
         dbcpProperties.put("password", "aemdev");
 
         try {
-             dataSource =  BasicDataSourceFactory.createDataSource(dbcpProperties);
+            BasicDataSource basicDataSource;
+            basicDataSource = new BasicDataSource();
+            basicDataSource.setUrl(dbcpProperties.getProperty("url", ""));
+            basicDataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+            basicDataSource.setUsername("aemdev");
+            basicDataSource.setPassword("aemdev");
+             dataSource =  basicDataSource;
         } catch (Exception e) {
             log.warn(e.getMessage(), e);
         }
