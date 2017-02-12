@@ -20,12 +20,17 @@ public class ProductServiceImpl implements ProductService {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
+	static final String INSERT ="insert into PRODUCT (PRODUCT_ID,PRODUCT_NAME,DESCRIPTION,PRODUCT_IMAGE) " +
+			" VALUES (?,?,?,?)";
+
+	static final String DELETE ="delete from PRODUCT where PRODUCT_ID=?";
+
 	public void add(Product product) {
-		String sql="insert into PRODUCT (PRODUCT_ID,PRODUCT_NAME,DESCRIPTION,PRODUCT_IMAGE)"+"VALUES (, '"+ product.getId()+"')"
-				+ "VALUES (, '"+ product.getName()+"')"
-				+ "VALUES (, '"+product.getDescription()+"')"
-				+ "VALUES (, '"+product.getImage()+"')";
-           jdbcTemplate.execute(sql);
+
+		jdbcTemplate.update(INSERT, new Object[]{product.getId(),
+				product.getName(),
+				product.getDescription(),
+				product.getImage()});
 	}
 
 	public List<Product> getProducts() {
