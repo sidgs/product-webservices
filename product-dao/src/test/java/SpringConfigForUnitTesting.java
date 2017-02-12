@@ -25,7 +25,7 @@ public class SpringConfigForUnitTesting {
 
 @Bean
 @Scope (value = "singleton")
-public DataSource getDataSorce(){
+public DataSource getDataSource(){
 
     BasicDataSource basicDataSource = new BasicDataSource();
     basicDataSource.setDriverClassName(driverClassName);
