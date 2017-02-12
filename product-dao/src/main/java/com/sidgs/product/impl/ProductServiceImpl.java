@@ -2,6 +2,7 @@ package com.sidgs.product.impl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Iterator;
 import java.util.List;
 
 import com.sidgs.product.ProductService;
@@ -19,9 +20,17 @@ public class ProductServiceImpl implements ProductService {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
-	public void add(Product product) {
-		// TODO Auto-generated method stub
+	static final String INSERT ="insert into PRODUCT (PRODUCT_ID,PRODUCT_NAME,DESCRIPTION,PRODUCT_IMAGE) " +
+			" VALUES (?,?,?,?)";
 
+	static final String DELETE ="delete from PRODUCT where PRODUCT_ID=?";
+
+	public void add(Product product) {
+
+		jdbcTemplate.update(INSERT, new Object[]{product.getId(),
+				product.getName(),
+				product.getDescription(),
+				product.getImage()});
 	}
 
 	public List<Product> getProducts() {
@@ -43,13 +52,19 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	public Product getProduct(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		String sql ="select * from products where PRODUCT_ID ='" + id + "'";
+		  List<Product> products= getProductsfromSQL(sql,null);
+		for(Product product: products){
+			if(product.getId()==id){
+				return product;
+			}
+		}
+         return null;
 	}
 
 	public void remove(int product_id) {
-		// TODO Auto-generated method stub
-
+       String sql = "delete * from products where PRODUCT_ID ='" + product_id + "'";
+         jdbcTemplate.execute(sql);
 	}
 
 }
