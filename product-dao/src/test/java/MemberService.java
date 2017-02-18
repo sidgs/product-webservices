@@ -20,9 +20,9 @@ public class MemberService {
 
     DataSource dataSource= null ;
 
-    ApplicationContext ap = new ClassPathXmlApplicationContext("classpath:testApplicationContext.xml");
+    ApplicationContext ap ;
 
-    @Before
+//    @Before
     public void setup()  {
 
         log.info("Setting up data source");
@@ -51,6 +51,10 @@ public class MemberService {
 
     }
 
+    @Before
+    public void springSetup() {
+        ap = new ClassPathXmlApplicationContext("classpath:/testApplicationContext.xml");
+    }
     @Test
     public void testList() {
 

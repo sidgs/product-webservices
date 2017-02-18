@@ -13,7 +13,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import javax.sql.DataSource;
 
 @Configuration
-@PropertySource("classpath:/member-jdbc.properties")
+@PropertySource("member-jdbc.properties")
 
 public class SpringConfigForUnitTesting {
 
@@ -33,7 +33,7 @@ public class SpringConfigForUnitTesting {
     @Scope (value = "singleton")
     public DataSource getDataSource(){
 
-        driverClassName = System.getProperty("jdbc.classname", "oracle.jdbc.driver.OracleDriver");
+//        driverClassName = System.getProperty("jdbc.classname", "oracle.jdbc.driver.OracleDriver");
         BasicDataSource basicDataSource = new BasicDataSource();
         basicDataSource.setDriverClassName(driverClassName);
         basicDataSource.setUrl(driverUrl);

@@ -43,33 +43,38 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.6</version>
-            <scope> test </scope>
+            <scope>test</scope>
         </dependency>
 
 
-     <!--  <dependency>
-       <groupId>com.oracle</groupId>
-       <artifactId>ojdbc6</artifactId>
-       <version>11.2.0</version>
-       <scope>test</scope>
-</dependency>
+        <!--  <dependency>
+          <groupId>com.oracle</groupId>
+          <artifactId>ojdbc6</artifactId>
+          <version>11.2.0</version>
+          <scope>test</scope>
+   </dependency>
 
-        -->
-    <dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-core</artifactId>
-    <version>4.1.9.RELEASE</version>
-</dependency>
-<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-context</artifactId>
-    <version>4.1.6.RELEASE</version>
-</dependency>
-<dependency>
-<groupId>org.springframework</groupId>
-<artifactId>spring-jdbc</artifactId>
-<version>4.1.6.RELEASE</version>
-</dependency>
+           -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>4.1.9.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.1.9.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>4.1.6.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>4.1.7.RELEASE</version>
+        </dependency>
         <dependency>
             <groupId>commons-dbcp</groupId>
             <artifactId>commons-dbcp</artifactId>
@@ -78,5 +83,5 @@
 
 
     </dependencies>
-    
+
 </project>
