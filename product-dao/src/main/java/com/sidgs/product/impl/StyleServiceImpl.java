@@ -20,7 +20,7 @@ import java.util.List;
 public class StyleServiceImpl implements StyleService {
 
 
-
+int id;
 
     @Autowired
     JdbcTemplate jdbcTemplate;
@@ -61,7 +61,10 @@ public class StyleServiceImpl implements StyleService {
     }
 
     public StyleMaster getStyle(int id) {
-        return null;
+        this.id = id;
+        String sql = "Select * from styles where STYLE_ID = '" +id +"'";
+        jdbcTemplate.execute(sql);
+        return getStyle(id);
     }
 
     public void remove(int styleId) {

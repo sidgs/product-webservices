@@ -1,4 +1,7 @@
+package com.sidgs;
+
 import org.apache.commons.dbcp2.BasicDataSource;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -38,6 +41,8 @@ public class SpringConfigForUnitTesting {
         basicDataSource.setPassword(password);
         return  basicDataSource;
     }
+
+
 
 
 }
