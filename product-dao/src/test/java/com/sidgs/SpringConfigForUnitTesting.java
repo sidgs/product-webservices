@@ -13,7 +13,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import javax.sql.DataSource;
 
 @Configuration
-@PropertySource("classpath:member-jdbc.properties")
+@PropertySource("classpath:/member-jdbc.properties")
 
 public class SpringConfigForUnitTesting {
 

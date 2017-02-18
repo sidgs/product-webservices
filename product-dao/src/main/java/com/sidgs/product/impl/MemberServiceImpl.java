@@ -5,6 +5,8 @@ import com.sidgs.product.error.MemberException;
 import com.sidgs.product.model.Member;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -15,13 +17,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+@Service
+
+
 public class MemberServiceImpl implements MemberService {
+
+
 
 
     Log logger = LogFactory.getLog(this.getClass());
 
     DataSource dataSource = null ;
-
+    @Autowired
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
     }

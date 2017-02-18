@@ -7,6 +7,8 @@ import org.apache.commons.logging.LogFactory;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.sql.DataSource;
 import java.util.List;
@@ -17,6 +19,8 @@ public class MemberService {
     Log log = LogFactory.getLog(this.getClass());
 
     DataSource dataSource= null ;
+
+    ApplicationContext ap = new ClassPathXmlApplicationContext("classpath:testApplicationContext.xml");
 
     @Before
     public void setup()  {
@@ -50,8 +54,9 @@ public class MemberService {
     @Test
     public void testList() {
 
-        com.sidgs.product.MemberService memberService = new MemberServiceImpl();
-        ((MemberServiceImpl)memberService).setDataSource(dataSource);
+        com.sidgs.product.MemberService memberService = (com.sidgs.product.MemberService) ap.getBean("memberServiceImpl");
+                //new MemberServiceImpl();
+        //((MemberServiceImpl)memberService).setDataSource(dataSource);
         try {
             List<Member> members = memberService.listAll();
             log.info(members.size());
