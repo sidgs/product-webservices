@@ -1,5 +1,9 @@
 # product-webservices
 
+## Pre-requisite Reading 
+- http://www.mkyong.com/spring-mvc/spring-mvc-hello-world-example/
+
+
 ## Setting Up Local Database 
 
 Pre-requisites ; 
