@@ -3,10 +3,9 @@ package com.sidgs.ws;
 import com.sidgs.product.MemberService;
 import com.sidgs.product.error.MemberException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,19 +18,31 @@ public class Member {
     @Autowired
     MemberService memberService;
 
-//    @RequestMapping("/member" method = RequestMethod.GET)
-    @RequestMapping (value = "/", method = RequestMethod.GET)
-    public List<com.sidgs.product.model.Member> getMembers() throws MemberException {
+    @RequestMapping (method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody List<com.sidgs.product.model.Member> getMembers() throws MemberException {
         return memberService.listAll();
     }
-    @RequestMapping(value = "/",method = RequestMethod.POST)
-    public String addMember(com.sidgs.product.model.Member member) {
-        return "added member ";
+
+    @RequestMapping (value = "/{userId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody com.sidgs.product.model.Member getMember(@PathVariable String userId) throws MemberException {
+        return memberService.findByUserID(userId.trim());
     }
 
-    @RequestMapping(value = "/",method = RequestMethod.DELETE)
-    public String deleteMember(String memberId) {
-        return "Delete Successful";
+    @RequestMapping(method = RequestMethod.POST)
+    public @ResponseBody void addMember(@RequestBody com.sidgs.product.model.Member member) {
+
+        try {
+            memberService.add(member);
+        } catch (MemberException e) {
+            e.printStackTrace();
+        }
+
+        return ;
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public @ResponseBody void deleteMember(@PathVariable String id) {
+        return ;
     }
 
 }

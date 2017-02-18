@@ -2,6 +2,7 @@
 
 ## Pre-requisite Reading 
 - http://www.mkyong.com/spring-mvc/spring-mvc-hello-world-example/
+- http://www.baeldung.com/spring-httpmessageconverter-rest
 
 
 ## Setting Up Local Database 
