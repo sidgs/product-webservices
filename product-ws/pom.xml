@@ -81,7 +81,7 @@
                         <jdbc.driverUrl>${db.driverUrl}</jdbc.driverUrl>
                         <jdbc.username>${db.username}</jdbc.username>
                         <jdbc.password>${db.password}</jdbc.password>
-                        <spring.active.profiles>jdbc</spring.active.profiles>
+                        <spring.profiles.active>jdbc</spring.profiles.active>
                     </systemProperties>
                 </configuration>
             </plugin>
