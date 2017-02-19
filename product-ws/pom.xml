@@ -15,6 +15,15 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
+    <properties>
+        <db.host>localhost</db.host>
+        <db.port>3306</db.port>
+        <db.name>products</db.name>
+        <db.driverUrl>jdbc:mysql://${db.host}:${db.port}/${db.name}</db.driverUrl>
+        <db.username>root</db.username>
+        <db.password>password</db.password>
+    </properties>
+
     <dependencies>
 
         <dependency>
@@ -66,12 +75,13 @@
                     <useTestClasspath>true</useTestClasspath>
                     <warDirectory>${build.directory}/${artifactId}-${version}</warDirectory>
                     <contextReloadable>true</contextReloadable>
-                    <path>/</path>
+                    <path>/product-ws</path>
                     <systemProperties>
                         <jdbc.classname>com.mysql.jdbc.Driver</jdbc.classname>
-                        <jdbc.driverUrl>jdbc:mysql://localhost:3306/products</jdbc.driverUrl>
-                        <jdbc.username>root</jdbc.username>
-                        <jdbc.password>password</jdbc.password>
+                        <jdbc.driverUrl>${db.driverUrl}</jdbc.driverUrl>
+                        <jdbc.username>${db.username}</jdbc.username>
+                        <jdbc.password>${db.password}</jdbc.password>
+                        <spring.active.profiles>jdbc</spring.active.profiles>
                     </systemProperties>
                 </configuration>
             </plugin>

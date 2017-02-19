@@ -11,8 +11,8 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/member")
-public class Member {
+@RequestMapping("member")
+public class MemberRestController {
 
 
     @Autowired
