@@ -32,4 +32,5 @@ db.password = password to connect to DB (Default: password)
 This will run the application @ http://localhost:8080/
 
 Testing the member web service
-- In a browser open the link 
+- In a browser open the link http://localhost:8080/product-ws/member/
+This should provide a list of members 
