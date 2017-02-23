@@ -28,6 +28,7 @@ public class MemberServiceImpl implements MemberService {
     Log logger = LogFactory.getLog(this.getClass());
 
     DataSource dataSource = null ;
+
     @Autowired
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
@@ -238,7 +239,7 @@ public class MemberServiceImpl implements MemberService {
 
             statement = connection.createStatement();
 
-            String sql = "SELECT * FROM MEMBER WHERE ID = " +userID;
+            String sql = "SELECT * FROM MEMBER WHERE ID =  '+userID+'";
             result=statement.executeQuery(sql);
             member= new Member();
             member.setId(result.getLong("ID"));

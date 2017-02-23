@@ -1,6 +1,7 @@
 package com.sidgs.product;
 
 
+import com.sidgs.product.error.ProductException;
 import com.sidgs.product.model.Product;
 
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
 public interface ProductService {
 
     void add(Product product);
-    List<Product> getProducts() ;
+    List<Product> getProducts() throws ProductException;
     Product getProduct(int id);
     void remove(int product_id);
 }

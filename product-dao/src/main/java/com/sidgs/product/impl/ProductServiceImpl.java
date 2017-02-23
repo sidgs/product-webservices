@@ -33,9 +33,10 @@ public class ProductServiceImpl implements ProductService {
 				product.getImage()});
 	}
 
-	public List<Product> getProducts() {
+	public List<Product> getProducts()  {
 		//step 3 :
-		String sql ="Select * from products";
+
+		String sql ="Select * from product";
 		//step 4: Decided to use a rowmapped to get the inforamation about our product
 		List<Product>  products = jdbcTemplate.query(sql, new ProductRowMapper<Product>());
 		return getProductsfromSQL(sql, null);
