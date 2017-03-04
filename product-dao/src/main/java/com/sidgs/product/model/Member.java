@@ -25,6 +25,16 @@ public class Member {
     @Column (name = "USER_ID")
     String userid ;
 
+    @OneToOne(optional = false)
+    Entities entities;
+
+    public Entities getEntities() {
+        return entities;
+    }
+
+    public void setEntities(Entities entities) {
+        this.entities = entities;
+    }
 
     public long getId() {
         return id;
