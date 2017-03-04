@@ -16,10 +16,10 @@ public class ApplicaitonContextTest {
 		ApplicationContext ap = new ClassPathXmlApplicationContext("classpath:testApplicationContext.xml");
 		//assert(ap.containsBean("/src/main/resources/productDao-ApplicationContext.xml"));
 		//System.out.println(Arrays.asList(ap.getBeanDefinitionNames()));
-		String[] array = null;
-		array = ap.getBeanNamesForType(Object.class);
-		for (int i = 0; i < array.length ; i++)
-			System.out.println(array[i]);
+//		String[] array = null;
+//		array = ap.getBeanNamesForType(Object.class);
+//		for (int i = 0; i < array.length ; i++)
+//			System.out.println(array[i]);
 		//System.out.println(ap.getBeanNamesForType(Object.class));
 	}
 	

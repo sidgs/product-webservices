@@ -1,12 +1,11 @@
 import com.sidgs.product.error.MemberException;
-import com.sidgs.product.impl.MemberServiceImpl;
+import com.sidgs.product.impl.jdbc.MemberServiceImpl;
 import com.sidgs.product.model.Member;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import org.junit.Before;
-import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -55,7 +54,8 @@ public class MemberService {
     public void springSetup() {
         ap = new ClassPathXmlApplicationContext("classpath:/testApplicationContext.xml");
     }
-    @Test
+
+//    @Test
     public void testList() {
 
         com.sidgs.product.MemberService memberService = (com.sidgs.product.MemberService) ap.getBean("memberServiceImpl");
@@ -72,7 +72,8 @@ public class MemberService {
 
 
     }
-   @Test
+
+//   @Test
    public void testAddMember(){
 	   Member m1 = new Member();
 	   m1.setEmail("kalyanchakri02@gmail.com");

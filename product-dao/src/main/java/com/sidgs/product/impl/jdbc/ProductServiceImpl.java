@@ -1,8 +1,7 @@
-package com.sidgs.product.impl;
+package com.sidgs.product.impl.jdbc;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Iterator;
 import java.util.List;
 
 import com.sidgs.product.ProductService;

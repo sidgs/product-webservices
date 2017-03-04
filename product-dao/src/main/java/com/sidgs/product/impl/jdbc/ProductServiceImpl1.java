@@ -1,4 +1,4 @@
-package com.sidgs.product.impl;
+package com.sidgs.product.impl.jdbc;
 
 import com.sidgs.product.ProductService;
 import com.sidgs.product.error.MemberException;

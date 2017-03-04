@@ -1,4 +1,4 @@
-package com.sidgs.product.impl;
+package com.sidgs.product.impl.jdbc;
 
 import com.sidgs.product.MemberService;
 import com.sidgs.product.error.MemberException;
@@ -21,8 +21,6 @@ import java.util.List;
 
 
 public class MemberServiceImpl implements MemberService {
-
-
 
 
     Log logger = LogFactory.getLog(this.getClass());
