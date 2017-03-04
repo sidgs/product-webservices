@@ -1,15 +1,28 @@
 package com.sidgs.product.model;
 
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="MEMBER")
 
 public class Member {
 
+    @Column(name = "ID")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
+    @Column (name = "FIRST_NAME")
     String firstName ;
+    @Column (name = "LAST_NAME")
     String lastName ;
+    @Column (name = "EMAIL")
     String email ;
+    @Column (name = "GENDER")
     String gender;
+    @Column (name = "TELE_PHONE")
     String telephone;
+    @Column (name = "USER_ID")
     String userid ;
 
 

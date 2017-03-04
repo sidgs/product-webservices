@@ -1,16 +1,33 @@
 package com.sidgs.product.model;
 
+import javax.persistence.*;
+
 /**
  * Created by ayeluri on 1/15/2017.
  */
+@Entity
+@Table (name="PRODUCT")
 public class Product {
 
+	@Column (name = "PRODUCT_NAME")
     String name ;
+
+	@Column (name = "DESCRIPTION")
     String description ;
-    int id ;
-    String style;
-    String brand;
-    String image;
+
+	@Column(name = "PRODUCT_ID")
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	int id ;
+
+	@Column (name = "PRODUCT_STYLE")
+	String style;
+
+	@Column (name = "PRODUCT_BRAND")
+	String brand;
+
+	@Column (name = "PRODUCT_IMAGE")
+	String image;
     
     
 
