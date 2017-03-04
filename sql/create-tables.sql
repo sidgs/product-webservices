@@ -2,7 +2,7 @@ create table member (
 	id INT,
 	first_name VARCHAR(50),
 	last_name VARCHAR(50),
-	email VARCHAR(50),
+	tin VARCHAR(50),
 	gender VARCHAR(50),
 	tele_phone VARCHAR(50),
 	userid VARCHAR(50)
