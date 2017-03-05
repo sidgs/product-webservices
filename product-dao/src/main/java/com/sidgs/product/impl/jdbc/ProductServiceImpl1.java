@@ -22,7 +22,7 @@ import java.util.List;
  * Created by Vytlasai on 2/22/2017.
  */
 
-@Service
+//@Service
 public class ProductServiceImpl1 implements ProductService {
 
 

@@ -1,7 +1,7 @@
 import com.sidgs.product.error.MemberException;
 import com.sidgs.product.impl.jdbc.MemberServiceImpl;
 import com.sidgs.product.model.Member;
-import org.apache.commons.dbcp2.BasicDataSource;
+//import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -22,33 +22,33 @@ public class MemberService {
     ApplicationContext ap ;
 
 //    @Before
-    public void setup()  {
-
-        log.info("Setting up data source");
-
-        Properties dbcpProperties = new Properties();
-
-        // DriverClass & url
-        dbcpProperties.put("driverClassName", "oracle.jdbc.driver.OracleDriver");
-        dbcpProperties.put("url", "jdbc:oracle:thin:@" +
-                "stp-e-catalog.cfsf6pdw4xmo.us-east-1.rds.amazonaws.com:1521:ORCL");
-        // Username / password;
-        dbcpProperties.put("username", "aemdev");
-        dbcpProperties.put("password", "aemdev");
-
-        try {
-            BasicDataSource basicDataSource;
-            basicDataSource = new BasicDataSource();
-            basicDataSource.setUrl(dbcpProperties.getProperty("url", ""));
-            basicDataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-            basicDataSource.setUsername("aemdev");
-            basicDataSource.setPassword("aemdev");
-             dataSource =  basicDataSource;
-        } catch (Exception e) {
-            log.warn(e.getMessage(), e);
-        }
-
-    }
+//    public void setup()  {
+//
+//        log.info("Setting up data source");
+//
+//        Properties dbcpProperties = new Properties();
+//
+//        // DriverClass & url
+//        dbcpProperties.put("driverClassName", "oracle.jdbc.driver.OracleDriver");
+//        dbcpProperties.put("url", "jdbc:oracle:thin:@" +
+//                "stp-e-catalog.cfsf6pdw4xmo.us-east-1.rds.amazonaws.com:1521:ORCL");
+//        // Username / password;
+//        dbcpProperties.put("username", "aemdev");
+//        dbcpProperties.put("password", "aemdev");
+//
+//        try {
+//            BasicDataSource basicDataSource;
+//            basicDataSource = new BasicDataSource();
+//            basicDataSource.setUrl(dbcpProperties.getProperty("url", ""));
+//            basicDataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+//            basicDataSource.setUsername("aemdev");
+//            basicDataSource.setPassword("aemdev");
+//             dataSource =  basicDataSource;
+//        } catch (Exception e) {
+//            log.warn(e.getMessage(), e);
+//        }
+//
+//    }
 
     @Before
     public void springSetup() {

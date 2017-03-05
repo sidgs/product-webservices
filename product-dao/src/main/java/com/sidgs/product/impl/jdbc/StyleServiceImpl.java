@@ -16,7 +16,7 @@ import java.util.List;
  * Created by Vytlasai on 2/11/2017.
  */
 
-@Service
+//@Service
 public class StyleServiceImpl implements StyleService {
 
 

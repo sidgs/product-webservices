@@ -2,15 +2,13 @@ package com.sidgs.product.impl.jpa;
 
 import com.sidgs.product.ProviderService;
 import com.sidgs.product.error.ProductException;
-import com.sidgs.product.model.Product;
 import com.sidgs.product.model.Provider;
+import com.sidgs.product.repositories.ProviderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 @Service
 public class ProviderServiceImpl implements ProviderService {

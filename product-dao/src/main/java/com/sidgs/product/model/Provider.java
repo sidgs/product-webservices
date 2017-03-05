@@ -7,7 +7,6 @@ import java.util.Set;
 
 @Entity
 @Table(name="GENIE_PROVIDER")
-
 public class Provider {
 
     @Column(name = "ID")

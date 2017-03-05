@@ -12,7 +12,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 
 //step 1 ; indicated that this is a sprign service
-@Service
+//@Service
 public class ProductServiceImpl implements ProductService {
 
 	// Step 2 : added a jdbctemplate and indicated that is autowired; i.e. provided by the spring bean factory at startup
